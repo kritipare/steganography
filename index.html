@@ -1,0 +1,117 @@
+<html>
+<head>
+  <title>Text hiding using Steganography Online</title>
+   <style>
+        body 
+        {
+            background-image: url('wallpaper.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-size: 100% 100%;
+    }
+        </style>
+  <link rel="icon" href="Icon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="header">
+        <div class="container">
+            <nav style="padding-top: 30px"> 
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <img src="Icon.png" style=" height: 90px; width: 125px"> 
+                    <label for="subject" style=" font-size: 20px; color: Yellow; padding-top: 15px">Data Secure</label> 
+                </div>
+            </nav>
+        </div>
+    </div>
+  <div class="container">
+    <div class="page-header">
+      <h1 style="color: Yellow">Text hiding using Steganography Online</h1>
+    </div>
+
+    <ul class="nav nav-tabs" id="tabs" data-tabs="tabs">
+      <li role="presentation" class="active"> <a href="#encode" data-toggle="tab">Encode</a></li>
+      <li role="presentation"> <a href="#decode" data-toggle="tab">Decode</a></li>
+    </ul>
+
+    <div id="my-tab-content" class="tab-content">
+      <div class="tab-pane active" id="encode">
+        <div>
+          <h2 style="color: Yellow">Encode message</h2>
+          <p class="alert alert-info">
+            </p>
+          <form class="form">
+            <div class="form-group">
+              <input class="form-control" type="file" name="baseFile" onchange="previewEncodeImage()">
+            </div>
+
+            <div class="form-group">
+              <textarea class="form-control message" rows="3" placeholder="Enter your message here"></textarea>
+            </div>
+
+            <div class="form-group">
+              <button class="encode btn btn-default pull-right" onclick="encodeMessage()">Encode</button>
+            </div>
+          </form>
+          <div class="clearfix"></div>
+        </div>
+
+        <div class="error" style="display: none;"></div>
+        <div class="binary" style="display: none;">
+          <h3 style="color: Yellow">Binary representation of your message</h3>
+          <textarea class="form-control message" style="word-wrap:break-word;">
+          </textarea>
+        </div>
+        <div class="images" style="display: none;">
+          <div class="original" style="display: none;">
+            <h3 style="color: Yellow">Original</h3>
+            <canvas></canvas>
+          </div>
+          <div class="nulled" style="display: none;">
+            <h3 style="color: Yellow">Normalized</h3>
+            <canvas></canvas>
+          </div>
+          <div class="message" style="display: none;">
+            <h3 style="color: Yellow">Message hidden in image (right click <span class="glyphicon glyphicon-arrow-right"></span> save as)</h3>
+            <canvas></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="decode">
+        <div>
+          <h2 style="color: Yellow">Decode image</h2>
+          <p class="alert alert-info">
+           </p>
+          <form class="form">
+            <div class="form-group">
+              <input class="form-control" type="file" name="decodeFile" onchange="previewDecodeImage()">
+            </div>
+            <div class="form-group">
+              <button class="decode btn btn-default pull-right" onclick="decodeMessage()">Decode</button>
+            </div>
+          </form>
+          <div class="clearfix"></div>
+        </div>
+        <div class="binary-decode" style="display: none;">
+          <h3 style="color: Yellow">Hidden message</h3>
+          <textarea class="form-control message" style="word-wrap:break-word;">
+          </textarea>
+        </div>
+        <div class="decode" style="display: none;">
+          <h3 style="color: Yellow">Input</h3>
+          <canvas></canvas>
+        </div>
+      </div>
+
+    </div>
+
+    
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script type="text/JavaScript" src="script.js"></script>
+</body>
+</html>
